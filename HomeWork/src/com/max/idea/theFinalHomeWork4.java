@@ -1,8 +1,11 @@
 package com.max.idea;
 
+import java.util.Scanner;
+
 public class theFinalHomeWork4 {
     public static void main(String[] args) {
-        /*Напишите программу-загадку: “Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает”. Ответ: “Заархивированный вирус”.
+        /*Напишите программу-загадку: “Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает”.
+        Ответ: “Заархивированный вирус”.
         У пользователя есть 3 попытки, чтобы отгадать загадку.
         Если пользователь ввел верный ответ, вывести: “Правильно!” и завершить работу.
         Если пользователь ввел неверный ответ на 1 или 2 попытке, вывести “Подумай еще!” и еще раз запросить ответ у пользователя.
@@ -12,5 +15,30 @@ public class theFinalHomeWork4 {
         Если на 2 и 3, вывести “Подсказка уже недоступна”.
         Если пользователь, использовавший подсказку, ошибется,
         вывести “Обидно, приходи в другой раз” и завершить работу.*/
+
+        String answer;
+        String trueAnswer = "Заархивированный вирус";
+        int counter = 1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает");
+        System.out.println("Введите ответ сразу или воспользуйтесь подсказкой, написав 'Подсказка'");
+
+        while (counter <= 3) {
+            answer = scanner.nextLine();
+            if (trueAnswer.equalsIgnoreCase(answer)) {
+                System.out.println("Правильно!");
+                break;
+            } else if (answer.equalsIgnoreCase("Подсказка") && counter == 1) {
+                System.out.println("Скажем так ему тесновато, я бы даже сказал что его прижали");
+            } else if (answer.equalsIgnoreCase("Подсказка") && counter > 1) {
+                System.out.println("Подсказка уже недоступна");
+            } else if (counter < 3){
+                counter++;
+                System.out.println("Подумай ещё!");
+            } else {
+                counter++;
+                System.out.println("Обидно, приходи в другой раз :(");
+            }
+        }
     }
 }
