@@ -22,7 +22,7 @@ public class theFinalHomeWork4 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Сидит дед, во сто шуб одет, кто его раздевает, тот слезы проливает");
         System.out.println("Введите ответ сразу или воспользуйтесь подсказкой, написав 'Подсказка'");
-
+        System.out.println();
         while (counter <= 3) {
             answer = scanner.nextLine();
             if (trueAnswer.equalsIgnoreCase(answer)) {
